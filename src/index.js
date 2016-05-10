@@ -55,8 +55,9 @@ const checkNormalVisible = function checkNormalVisible(component) {
                                         document.documentElement.scrollTop :
                                         document.body.scrollTop;
 
-  const { top, height: elementHeight } = node.getBoundingClientRect();
+  const { top, left, height: elementHeight } = node.getBoundingClientRect();
   const elementTop = top + scrollTop; // element top relative to document
+  const elementLeft = left; // element left relative to document
   const elementBottom = elementTop + elementHeight;
 
   const windowInnerHeight = window.innerHeight || document.documentElement.clientHeight;
