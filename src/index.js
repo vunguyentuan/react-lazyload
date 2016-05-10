@@ -247,7 +247,7 @@ class LazyLoad extends Component {
            this.props.children :
              this.props.placeholder ?
                 this.props.placeholder :
-                <div style={{ height: this.props.height }} className="lazyload-placeholder"></div>;
+                <div style={{ height: this.props.height }} className={this.props.className}></div>;
   }
 }
 
@@ -261,7 +261,8 @@ LazyLoad.propTypes = {
   children: PropTypes.node,
   throttle: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
   debounce: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
-  placeholder: PropTypes.node
+  placeholder: PropTypes.node,
+  className: PropTypes.string
 };
 
 LazyLoad.defaultProps = {
@@ -270,7 +271,8 @@ LazyLoad.defaultProps = {
   offset: 0,
   overflow: false,
   resize: false,
-  scroll: true
+  scroll: true,
+  className: 'lazyload-placeholder'
 };
 
 export default LazyLoad;
